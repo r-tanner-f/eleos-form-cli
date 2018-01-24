@@ -1,0 +1,25 @@
+{
+  "name": "eleos-form-cli",
+  "version": "1.0.0",
+  "description": "Retrieves and updates Eleos Mobile Platform forms via API",
+  "main": "eleos-form-cli.js",
+  "bin": "./eleos-form-cli.js",
+  "author": {
+    "name": "Tanner Faulkner",
+    "email": "form-cli@rtannerf.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "minimist": "^1.2.0",
+    "readline-sync": "^1.4.7",
+    "request": "^2.83.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}
