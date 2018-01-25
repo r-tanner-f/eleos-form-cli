@@ -1,3 +1,4 @@
+
 # Form CLI for Eleos Mobile Platform
 
 ## Install
@@ -28,14 +29,14 @@ On Windows, you may need to add npm's bin to your PATH environment variable. It'
   Cannot get/set both serialization and visibility at the same time
 
   Examples:
-      node eleos-form-editor.js SECRETKEY SomeFormCode
+      node eleos-form-cli.js SECRETKEY SomeFormCode
 
-      eleos-form-editor SECRETKEY SomeFormCode serialization.js --update --serialization
+      eleos-form-cli SECRETKEY SomeFormCode serialization.js --update --serialization
 
   You can also specify named arguments instead of positional
 
   Example:
-      eleos-form-editor -key SECRETKEY -form SomeFormCode -file outfile.json
+      eleos-form-cli -key SECRETKEY -form SomeFormCode -file outfile.json
 
   Note the single dashes when specifying parameters vs flags.
 ```
