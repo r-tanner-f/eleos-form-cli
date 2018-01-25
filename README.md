@@ -1,12 +1,15 @@
+
 # Form CLI for Eleos Mobile Platform
 
 ## Install
 
-[Requires Node.js 6.40 or above](https://nodejs.org/en/download/)
+[Requires Node.js 6.4.0 or above](https://nodejs.org/en/download/)
 
 To install, clone the repo and run `npm install` in the repo directory. You can now run with `node path/to/repo/eleos-form-cli.js ...arguments`.
 
-Additionally, you can run `npm link` in the repo directory and add it to npm's bin. This allows you to run `eleos-form-cli ...arguments` from any terminal (cmd, cygwin, bash, etc) provided your PATH includes npm's bin. (On Windows, you may need to add this path. It's typically at `%UserProfile%\AppData\Roaming\npm`)
+Additionally, you can run `npm link` in the repo directory. This allows you to run `eleos-form-cli ...arguments` from any terminal (cmd, cygwin, bash, etc) provided your PATH includes npm's bin. 
+
+On Windows, you may need to add npm's bin to your PATH environment variable. It's typically at `%UserProfile%\AppData\Roaming\npm`.
 
 ## Use
 
@@ -26,14 +29,14 @@ Additionally, you can run `npm link` in the repo directory and add it to npm's b
   Cannot get/set both serialization and visibility at the same time
 
   Examples:
-      node eleos-form-editor.js SECRETKEY SomeFormCode
+      node eleos-form-cli.js SECRETKEY SomeFormCode
 
-      eleos-form-editor SECRETKEY SomeFormCode serialization.js --update --serialization
+      eleos-form-cli SECRETKEY SomeFormCode serialization.js --update --serialization
 
   You can also specify named arguments instead of positional
 
   Example:
-      eleos-form-editor --key SECRETKEY --form SomeFormCode --file outfile.json
+      eleos-form-cli --key SECRETKEY --form SomeFormCode --file outfile.json
 
   If your key begins with -- use = to assign argument value:
       eleos-form-editor --key=--SECRETKEY
