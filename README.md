@@ -2,7 +2,7 @@
 
 ## Install
 
-[Requires Node.js 6.40 or above](https://nodejs.org/en/download/)
+[Requires Node.js 6.4.0 or above](https://nodejs.org/en/download/)
 
 To install, clone the repo and run `npm install` in the repo directory. You can now run with `node path/to/repo/eleos-form-cli.js ...arguments`.
 
