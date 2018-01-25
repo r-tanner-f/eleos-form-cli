@@ -33,7 +33,5 @@ Additionally, you can run `npm link` in the repo directory and add it to npm's b
   You can also specify named arguments instead of positional
 
   Example:
-      eleos-form-editor -key SECRETKEY -form SomeFormCode -file outfile.json
-
-  Note the single dashes when specifying parameters vs flags.
+      eleos-form-editor --key SECRETKEY --form SomeFormCode --file outfile.json
 ```

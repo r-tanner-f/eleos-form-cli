@@ -1,5 +1,16 @@
 #!/usr/bin/env node
-const argv = require('minimist')(process.argv.slice(2), {boolean: true})
+const argv = require('minimist')(process.argv.slice(2), {
+  /* eslint-disable no-multi-spaces */
+  boolean: [
+    'update',        'u',
+    'serialization', 's',
+    'visibility',    'v',
+    'noconfirm',     'n',
+    'overwrite',     'o'
+  ]
+  /* eslint-enable */
+})
+
 const readlineSync = require('readline-sync')
 const request = require('request')
 const fs = require('fs')
@@ -32,8 +43,7 @@ if (help || !key || !form || (serializationOnly && visibilityOnly)) {
   console.log('      node eleos-form-editor.js SECRETKEY SomeFormCode')
   console.log('\n      eleos-form-editor SECRETKEY SomeFormCode serialization.js --update --serialization')
   console.log('\n  You can also specify named arguments instead of positional. For example:')
-  console.log('      eleos-form-editor -key SECRETKEY -form SomeFormCode -file outfile.json')
-  console.log('  Note the single dashes when specifying parameters vs flags.')
+  console.log('      eleos-form-editor --key SECRETKEY --form SomeFormCode --file outfile.json')
   process.exit(1)
 }
 
