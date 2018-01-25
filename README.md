@@ -6,7 +6,9 @@
 
 To install, clone the repo and run `npm install` in the repo directory. You can now run with `node path/to/repo/eleos-form-cli.js ...arguments`.
 
-Additionally, you can run `npm link` in the repo directory and add it to npm's bin. This allows you to run `eleos-form-cli ...arguments` from any terminal (cmd, cygwin, bash, etc) provided your PATH includes npm's bin. (On Windows, you may need to add this path. It's typically at `%UserProfile%\AppData\Roaming\npm`)
+Additionally, you can run `npm link` in the repo directory. This allows you to run `eleos-form-cli ...arguments` from any terminal (cmd, cygwin, bash, etc) provided your PATH includes npm's bin. 
+
+On Windows, you may need to add npm's bin to your PATH environment variable. It's typically at `%UserProfile%\AppData\Roaming\npm`.
 
 ## Use
 
