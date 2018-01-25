@@ -34,4 +34,7 @@ Additionally, you can run `npm link` in the repo directory and add it to npm's b
 
   Example:
       eleos-form-editor --key SECRETKEY --form SomeFormCode --file outfile.json
+
+  If your key begins with -- use = to assign argument value:
+      eleos-form-editor --key=--SECRETKEY
 ```
