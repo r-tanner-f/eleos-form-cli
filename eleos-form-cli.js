@@ -39,7 +39,7 @@ const file = argv.file || (useKeyfile ? argv._[1] : argv._[2])
 
 if (setKey && key) {
   setKeyfile()
-  console.log(`Key set for ${setKey} environment`)
+  console.log(`Key set for ${typeof setKey === 'string' ? setKey : environment} environment`)
   process.exit(0)
 }
 
@@ -97,7 +97,7 @@ function setKeyfile () {
   const cipher = crypto.createCipher(algo, encryptionKey)
   let crypted = cipher.update(key, 'utf-8', 'hex')
   crypted += cipher.final('hex')
-  encrypted[setKey || environment] = crypted
+  encrypted[typeof setKey === 'string' ? setKey : environment] = crypted
 
   fs.writeFileSync(
     keyfilePath,
