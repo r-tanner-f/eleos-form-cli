@@ -68,7 +68,13 @@ function getKeyfile () {
 
     const decipher = crypto.createDecipher(algo, encryptionKey)
     let result = decipher.update(encrypted[environment], 'hex', 'utf8')
-    result += decipher.final('utf8')
+    try {
+      result += decipher.final('utf8')
+    } catch (err) {
+      console.error(`Problem decrypting ${environment} environment key\nBad password? Use --password to specifiy decrypt password`)
+      process.exit(1)
+    }
+
     return result
   } catch (err) {
     if (err.code === 'ENOENT') {
