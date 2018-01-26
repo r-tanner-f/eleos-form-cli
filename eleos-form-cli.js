@@ -3,7 +3,8 @@ const readlineSync = require('readline-sync')
 const request = require('request')
 const fs = require('fs')
 const crypto = require('crypto')
-const algo = 'aes-256-cbc'
+
+const helptext = require('./help')
 
 const argv = require('minimist')(process.argv.slice(2), {
   /* eslint-disable no-multi-spaces */
@@ -17,6 +18,7 @@ const argv = require('minimist')(process.argv.slice(2), {
   /* eslint-enable */
 })
 
+const algo = 'aes-256-cbc'
 const serverUrl = argv['override-server'] || 'https://platform.driveaxleapp.com/api/v1/forms/'
 const serializationOnly = argv['serialization-only'] || argv.s
 const visibilityOnly = argv['visibility-only'] || argv.v
@@ -42,31 +44,7 @@ if (setKey && key) {
 }
 
 if (help || !key || !form || (serializationOnly && visibilityOnly)) {
-  console.log('\n  Usage:')
-  console.log('  key form [file]                 gets a form and either outputs to console or to file')
-  console.log('  key form file --update          sets a form using specified file')
-  console.log('\n  Flags:')
-  console.log('  --update               --u      sets a form or javascript property using the specified file')
-  console.log('  --serialiaztion-only   --s      gets/sets only the serialization_javascript property')
-  console.log('  --visibility-only      --v      gets/sets only the visibility_javascript property')
-  console.log('  --no-confirm           --n      skips confirmation prompts')
-  console.log('  --overwrite            --o      overwrites existing files')
-  console.log('  --override-server               server defaults to https://platform.driveaxleapp.com/api/v1/forms/')
-  console.log('\n  Cannot get/set both serialization and visibility at the same time.')
-  console.log('\n  Examples:')
-  console.log('      node eleos-form-editor.js SECRETKEY SomeFormCode')
-  console.log('\n      eleos-form-editor SECRETKEY SomeFormCode serialization.js --update --serialization')
-  console.log('\n  You can also specify named arguments instead of positional. For example:')
-  console.log('      eleos-form-editor --key SECRETKEY --form SomeFormCode --file outfile.json')
-  console.log('\n  If your key begins with -- use = to assign argument value:')
-  console.log('      eleos-form-editor --key=--SECRETKEY')
-  console.log('\n  If you\'d like to save your key:')
-  console.log('      eleos-form-editor --save-key production --key SECRETKEY')
-  console.log('\n  Custom encryption key and file path: ')
-  console.log('      eleos-form-editor --password keyboardcat --keyfile ~/.keys --save-key sandbox --key SECRETKEY')
-  console.log('\n  Use --environment to set environment on run:')
-  console.log('      eleos-form-editor --environment production --password keyboardcat --form SomeForm')
-
+  console.error(helptext)
   process.exit(1)
 }
 
