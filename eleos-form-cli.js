@@ -33,7 +33,7 @@ const environment = argv.environment || argv.e || 'sandbox'
 const setKey = argv['set-key']
 
 const useKeyfile = setKey ? false : getKeyfile()
-const key = argv.key || argv._[0] || useKeyfile
+const key = argv.key || useKeyfile || argv._[0]
 const form = argv.form || (useKeyfile ? argv._[0] : argv._[1])
 const file = argv.file || (useKeyfile ? argv._[1] : argv._[2])
 
