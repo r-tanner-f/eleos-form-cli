@@ -29,7 +29,7 @@ const help = argv.help || argv.h
 
 const encryptionKey = argv.p || argv['password'] || '4RVo!SYwKaZXSqZ@CEQ2Nx'
 const keyfilePath = argv.keyfile || argv.k || process.env.Home + '.eleos-form-cli'
-const environment = argv.environment || argv.e || 'sandbox'
+const environment = argv.environment || argv.e || argv.production ? 'production' : 'sandbox'
 const setKey = argv['set-key']
 
 const useKeyfile = setKey ? false : getKeyfile()

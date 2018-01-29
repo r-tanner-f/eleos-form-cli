@@ -11,6 +11,7 @@ module.exports =
     --no-confirm           --n      skips confirmation prompts
     --overwrite            --o      overwrites existing files
     --override-server               server defaults to https://platform.driveaxleapp.com/api/v1/forms/
+    --production                    sets environment to production when using keyfile
   
   Cannot get/set both serialization and visibility at the same time.
   
